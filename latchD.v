@@ -3,6 +3,8 @@ module latchD (output reg Q, Qn,
   
   wire Sn, Rn, Dn;
   
+  not(Dn, D);
+  
   nand(Sn, D, C);
   nand(Rn, Dn, C);
   
