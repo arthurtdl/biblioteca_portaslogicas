@@ -1,4 +1,4 @@
-module latchD (output reg Q, Qn,
+module latchD (output wire Q, Qn,
               input wire D, C);
   
   wire Sn, Rn, Dn;
