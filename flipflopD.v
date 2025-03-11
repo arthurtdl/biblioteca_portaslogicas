@@ -16,11 +16,11 @@ endmodule
 module flipflopD (output wire Q, Qn,
                  input wire Clk, D);
   
-  wire Q1, Clkn;
+  wire Q1, Q1n, Clkn, Clknn;
   
   not(Clkn, Clk);
   
   latchD mestre (.Q(Q1), .Qn(Qn1), .D(D), .C(Clk));
-  latch escravo (.Q(Q), .Qn(Qn), .D(Q1), .C(Clkn));
+  latchD escravo (.Q(Q), .Qn(Qn), .D(Q1), .C(Clkn));
   
 endmodule
