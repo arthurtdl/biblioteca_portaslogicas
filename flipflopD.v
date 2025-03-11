@@ -1,26 +1,13 @@
-module latchD (output wire Q, Qn,
-              input wire D, C);
-  
-  wire Sn, Rn, Dn;
-  
-  not(Dn, D);
-  
-  nand(Sn, D, C);
-  nand(Rn, Dn, C);
-  
-  nand(Q, Qn, Sn);
-  nand(Qn, Q, Rn);
-  
-endmodule
+`include "latchD.v"
 
 module flipflopD (output wire Q, Qn,
                  input wire Clk, D);
   
   wire Q1, Q1n, Clkn, Clknn;
   
-  not(Clkn, Clk);
+  not_gate NOT (Clkn, Clk);
   
-  latchD mestre (.Q(Q1), .Qn(Qn1), .D(D), .C(Clk));
-  latchD escravo (.Q(Q), .Qn(Qn), .D(Q1), .C(Clkn));
+  latchD mestre (.Q(Q1), .Qn(Qn1), .D(D), .C(Clkn));
+  latchD escravo (.Q(Q), .Qn(Qn), .D(Q1), .C(Clk));
   
 endmodule
