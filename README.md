@@ -1,3 +1,3 @@
-# biblioteca_portaslogicas
+# Módulos SD
  
-Biblioteca de Portas Lógicas para a Disciplina Sistemas Digitais
+Módulos para um computador de 8bits em verilog
