@@ -1,4 +1,4 @@
-module latchD (output reg Q, Qn,
+module latchD (output wire Q, Qn,
               input wire D, C);
   
   wire Sn, Rn, Dn;
@@ -13,14 +13,14 @@ module latchD (output reg Q, Qn,
   
 endmodule
 
-module flipflopD (output reg Q, Qn,
+module flipflopD (output wire Q, Qn,
                  input wire Clk, D);
   
-  wire Q1, Q1n, Clkn;
+  wire Q1, Clkn;
   
   not(Clkn, Clk);
   
-  latchD mestre (Q.(Q1), Qn.(Q1n),  D.(D), C.(Clk));
-  latch escravo (Q.(Q), Qn.(Qn), D.(Q1), C.(Clkn));
+  latchD mestre (.Q(Q1), .Qn(Qn1), .D(D), .C(Clk));
+  latch escravo (.Q(Q), .Qn(Qn), .D(Q1), .C(Clkn));
   
 endmodule
