@@ -3,7 +3,7 @@
 module flipflopD (output wire Q, Qn,
                  input wire Clk, D);
   
-  wire Q1, Q1n, Clkn, Clknn;
+  wire Q1, Q1n, Clkn;
   
   not_gate NOT (Clkn, Clk);
   
