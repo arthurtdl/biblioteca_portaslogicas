@@ -12,7 +12,7 @@ module latchD_tb ();
   $dumpvars(0, latchD_tb);
 
   // Inicializando os sinais
-  D = 0; C = 0;
+  D = 0; C = 1;
   #10;
     
   // Teste 1: D = 0, C = 1 (Q deve ser 0)
