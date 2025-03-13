@@ -4,8 +4,9 @@ module arithmetic_unit_tb();
     reg [7:0] A, B;
     reg [1:0] sel;
     wire [7:0] result;
+    wire [3:0] NZVC;
 
-    arithmetic_unit DUT (.result(result), .A(A), .B(B), .sel(sel));
+    arithmetic_unit DUT (.result(result), .NZVC(NZVC), .A(A), .B(B), .sel(sel));
 
     initial begin
     $dumpfile("arithmetic_unit_tb.vcd");
@@ -22,7 +23,7 @@ module arithmetic_unit_tb();
     A = 8'b00000010;  // A = 2
     // B = 1
     sel = 2'b01;      // A + 1
-    #10;
+    #5;
 
     // Teste 3: A - B (sel = 10)
     A = 8'b00000010;  // A = 2

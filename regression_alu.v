@@ -1,5 +1,9 @@
 `timescale 1ns/1ps
 
+`include "alua.v"
+`include "ALUb.v"
+
+
 module comp_tb;
 
   // Inputs
@@ -11,7 +15,7 @@ module comp_tb;
   wire [7:0] R_sys1, R_sys2;
 
   // Instantiate the two implementations
-  alub DUT(.Result(R_sys1), .NZVC(F_sys1), .A(A), .B(B), .ALU_Sel(ALU_Sel));  // Structural Model = Developer's File
+  alua DUT(.result(R_sys1), .NZVC(F_sys1), .A(A), .B(B), .sel(ALU_Sel));  // Structural Model = Developer's File
   alub REF(.Result(R_sys2), .NZVC(F_sys2), .A(A), .B(B), .ALU_Sel(ALU_Sel));  // Behavioral Model = Architect's File
   
   // Stimulus generation

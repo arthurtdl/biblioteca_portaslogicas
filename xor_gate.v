@@ -6,4 +6,5 @@ module xor_gate(output out,
   nand(B, in1, A);
   nand(C, in2, A);
   nand(out, B, C);
+  
 endmodule
