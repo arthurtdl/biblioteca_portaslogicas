@@ -1,5 +1,8 @@
 `timescale 1ns/1ps
 
+`include "count8a.v"
+`include "count8b.v"
+
 module count_tb;
 
 	// Inputs
@@ -12,7 +15,7 @@ module count_tb;
 	integer i;
 
 	// count8b is provided by "The Architect", count8a by "The Developer Teams" 
-    count8a DUT(.CNT(CNT1_TB), .clk(clk_TB), .res(res_TB), .EN(EN_TB), .load(load_TB), .CNT_In(CNT_In_TB));
+    count8a DUT(.cnt(CNT1_TB), .Clk(clk_TB), .Res(res_TB), .En(EN_TB), .Load(load_TB), .cnt_in(CNT_In_TB));
 	count8b REF(.CNT(CNT2_TB), .clk(clk_TB), .res(res_TB), .EN(EN_TB), .load(load_TB), .CNT_In(CNT_In_TB));
 
 
