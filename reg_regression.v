@@ -46,7 +46,7 @@ module reg_tb;
   	initial
 		begin
 				 res_TB=0; EN_TB=0; Reg_In_TB = 8'h00;
-            #5   res_TB = 1; 
+            #4   res_TB = 1; 
 			#95  EN_TB=1; Reg_In_TB = 8'h77;
           	#20  EN_TB=0; Reg_In_TB = 8'h00;	
 		end

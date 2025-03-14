@@ -43,7 +43,7 @@ module count_tb;
   	initial
 		begin        		      
 				 res_TB=0; EN_TB=1; load_TB=0; CNT_In_TB = 8'h00;
-            #5   res_TB = 1; 
+            #4   res_TB = 1; 
 			#95  load_TB=1; CNT_In_TB = 8'h11;
           	#40  load_TB=0; CNT_In_TB = 8'h00;
           	#60  EN_TB = 0;

@@ -32,7 +32,5 @@ module dflipflop (output reg Q,Qn,
   				Q <= D;
   				Qn <= ~D;
   			end
-
-	end
-  
+  	end
 endmodule
