@@ -7,7 +7,7 @@ module reg8a (output wire [7:0] reg_out,
 
   wire enabled_clk;
 
-  and_gate AND (.out(enabled_clk), in1.(Clk), in2.(En));
+  and_gate AND0 (.out(enabled_clk), .in1(Clk), .in2(En));
 
   dflipflop ff0 (.Q(reg_out[0]), .Qn(), .Clock(enabled_clk), .Reset(Res), .Preset(), .D(reg_in[0]));
   dflipflop ff1 (.Q(reg_out[1]), .Qn(), .Clock(enabled_clk), .Reset(Res), .Preset(), .D(reg_in[1]));

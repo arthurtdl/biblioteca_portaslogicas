@@ -1,5 +1,8 @@
 `timescale 1ns/1ps
 
+`include "reg8a.v"
+`include "reg8b.v"
+
 module reg_tb;
 
 	// Input
@@ -12,7 +15,7 @@ module reg_tb;
 	integer i;
 
 	// reg8b is provided by "The Architect", reg8a by "The Developer Teams" 
-    reg8a DUT(.Reg_Out(Reg1_Out_TB), .clk(clk_TB), .res(res_TB), .EN(EN_TB), .Reg_In(Reg_In_TB));
+    reg8a DUT(.reg_out(Reg1_Out_TB), .Clk(clk_TB), .Res(res_TB), .En(EN_TB), .reg_in(Reg_In_TB));
     reg8b REF(.Reg_Out(Reg2_Out_TB), .clk(clk_TB), .res(res_TB), .EN(EN_TB), .Reg_In(Reg_In_TB));
 
 
