@@ -5,7 +5,7 @@
 module mux_2x1 (output wire out,
                 input wire in1, in2, sel);
 
-  wire seln;
+  wire sel_n;
   wire out_0, out_1;
 
   not_gate NOT (.out(sel_n), .in(sel));
