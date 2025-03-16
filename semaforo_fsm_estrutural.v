@@ -4,7 +4,7 @@
 `include "components_new.v"
 
 module fsm_estrutural (output wire red, ylw, grn,
-                       input wire CAR, timeout, Clock);
+                       input wire CAR, timeout, Clock, Reset);
 
   wire and0_ff1, and1_ff1;
   wire and_ff2, or_ff2, not_ff2;
@@ -20,8 +20,8 @@ module fsm_estrutural (output wire red, ylw, grn,
   or_gate OR0 (.out(or_ff2), .in1(and_ff2), .in2(ylw));
 
   // Memoria/flip-flop's
-  dflipflop FF1 (.Q(ylw), .Qn(y1n), .Clock(Clock), .Reset(), .Preset(), .D(and1_ff1));
-  dflipflop FF2 (.Q(red), .Qn(y2n), .Clock(Clock), .Reset(), .Preset(), .D(or_ff2));
+  dflipflop FF1 (.Q(ylw), .Qn(y1n), .Clock(Clock), .Reset(Reset), .Preset(), .D(and1_ff1));
+  dflipflop FF2 (.Q(red), .Qn(y2n), .Clock(Clock), .Reset(Reset), .Preset(), .D(or_ff2));
 
   // Lógica de saída para o grn
   and_gate AND3 (.out(grn), .in1(y1n), .in2(y2n));
