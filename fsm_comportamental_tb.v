@@ -1,8 +1,8 @@
 `timescale 1ns/1ps
 
-`include "semaforo_fsm_estrutural.v"
+`include "semaforo_fsm_comportamental.v"
 
-module tb_fsm_estrutural;
+module tb_fsm_comportamental;
 
   reg CAR;
   reg timeout;
@@ -10,14 +10,14 @@ module tb_fsm_estrutural;
   reg Reset;
   wire red, ylw, grn;
   
-  fsm_estrutural DUT (.red(red), .ylw(ylw), .grn(grn), .CAR(CAR), .timeout(timeout), .Clock(Clock), .Reset(Reset));
+  fsm_comportamental DUT (.red(red), .ylw(ylw), .grn(grn), .CAR(CAR), .timeout(timeout), .Clock(Clock), .Reset(Reset));
   
   // Geração de clock: período de 10 ns (5 ns high, 5 ns low)
   always #5 Clock = ~Clock;
   
   initial begin
-    $dumpfile("fsm_waveform.vcd");
-    $dumpvars(0, tb_fsm_estrutural);
+    $dumpfile("fsm_comportamental.vcd");
+    $dumpvars(0, tb_fsm_comportamental);
 
     // Inicia com reset ativo (Reset = 0) para definir o estado inicial
     Clock = 1'b0;
